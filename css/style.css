@@ -1,0 +1,291 @@
+/* Taste & See Creamery — faithful rebuild of the Wix site.
+   Desktop values are measured from the live site at 1280px wide and written in
+   rem with 1rem = 1px at 1280px (root font-size scales with the viewport, the
+   way the Wix site does). The phone layout (≤750px) uses 1rem = 1px at 375px. */
+
+@font-face { font-family: 'DIN Pro'; src: url(../fonts/dinpromedium.woff2) format('woff2'); font-display: swap; }
+@font-face { font-family: 'DIN Neuzeit'; src: url(../fonts/dinneuzeit-latin.woff2) format('woff2'); font-display: swap; }
+@font-face { font-family: 'Reklame Script'; src: url(../fonts/reklamescript-latin.woff2) format('woff2'); font-display: swap; }
+@font-face { font-family: 'Belinda'; src: url(../fonts/belinda.woff2) format('woff2'); font-display: swap; }
+@font-face { font-family: 'Madefor Text'; src: url(../fonts/madefor-text.woff2) format('woff2'); font-weight: 400 700; font-display: swap; }
+@font-face { font-family: 'Madefor Display'; src: url(../fonts/madefor-display.woff2) format('woff2'); font-weight: 400 700; font-display: swap; }
+
+:root {
+  --pink: #DA7D7B;
+  --teal: #93BEC6;
+  --brown: #401D07;
+  --ink: #120700;
+  --grad: linear-gradient(110deg, #DA7D7B 12.6%, rgba(147,190,198,0.43) 99%);
+  --grad-strong: linear-gradient(110deg, #DA7D7B 12.6%, rgba(147,190,198,0.91) 99%);
+  --script: 'Reklame Script', cursive;
+  --din: 'DIN Pro', 'Madefor Text', sans-serif;
+  --dinn: 'DIN Neuzeit', 'Oswald', sans-serif;
+  --text: 'Madefor Text', Arial, sans-serif;
+  --display: 'Madefor Display', 'Madefor Text', Arial, sans-serif;
+}
+
+html { font-size: calc(100vw / 1280); scroll-behavior: smooth; }
+*, *::before, *::after { box-sizing: border-box; }
+body { margin: 0; background: #fff; color: #000; font-family: var(--text); -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+img, video { display: block; }
+a { color: inherit; }
+.abs { position: absolute; }
+.cover { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.band { position: relative; overflow: hidden; width: 100%; }
+.shadow { text-shadow: 0 1px 2px rgba(0,0,0,0.08); }
+
+/* Script headings with the pink→teal gradient fill */
+.grad-text {
+  font-family: var(--script); font-weight: 400; line-height: 1.1; white-space: nowrap;
+  background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+
+/* ---------- Header ---------- */
+.hdr { position: fixed; top: 0; left: 0; right: 0; z-index: 50; height: 135rem; background: #fff; }
+.hdr__logo { position: absolute; left: 31rem; top: 21rem; width: 381rem; height: 66rem; }
+.hdr__logo img { width: 100%; height: 100%; object-fit: contain; }
+.hdr__tag { position: absolute; left: 422rem; top: 37rem; width: 263rem; margin: 0; font-family: var(--script); font-size: 25.3rem; line-height: 32.9rem; color: var(--pink); text-align: center; }
+.hdr__locs { position: absolute; left: 779rem; top: 21rem; width: 310rem; margin: 0; padding: 0; list-style: none; }
+.hdr__locs li { position: relative; height: 20rem; margin-bottom: 5rem; font-family: var(--din); font-size: 14.2rem; line-height: 19.9rem; color: var(--pink); }
+.hdr__locs img { position: absolute; left: 0; top: 2rem; width: 18rem; height: 18rem; }
+.hdr__locs .name { position: absolute; left: 24rem; top: 3rem; white-space: nowrap; }
+.hdr__locs .tel { position: absolute; right: 0; top: 3rem; text-decoration: none; }
+.hdr__locs .tel--u { text-decoration: underline; }
+.hdr__menu { position: absolute; left: 1113rem; top: 21rem; width: 144rem; height: 42rem; border-radius: 20.2rem; background: var(--teal); color: #fff; font-family: var(--text); font-size: 14.2rem; line-height: 42rem; text-align: center; text-decoration: none; }
+.spacer { height: 135rem; }
+
+/* ---------- Hero ---------- */
+.hero { height: 720rem; }
+.hero__wave { position: absolute; left: 0; top: 0; width: 100%; height: 61rem; z-index: 2; }
+.hero__special { position: absolute; left: 19rem; bottom: 22rem; width: 399rem; height: 215rem; border: 6rem solid var(--teal); border-radius: 16rem; overflow: hidden; z-index: 2; }
+.hero__special img { width: 100%; height: 100%; object-fit: cover; }
+.hero__m { display: none; }
+
+/* ---------- Scoops band ---------- */
+.scoops { height: 435rem; }
+.scoops__h { position: absolute; left: 376rem; top: 60rem; width: 725rem; height: 80rem; margin: 0; font-size: 66rem; line-height: 80rem; text-align: center; }
+.scoops__row { position: absolute; left: 0; top: 0; width: 100%; height: 100%; }
+.scoops__row img { position: absolute; object-fit: cover; }
+
+/* ---------- Photo slider ---------- */
+.slider { height: 615rem; }
+.slider__track { position: absolute; inset: 0; display: flex; transition: transform .8s ease; }
+.slider__track img { flex: 0 0 100%; width: 100%; height: 100%; object-fit: cover; }
+.slider__wave { position: absolute; left: 0; top: 0; width: 100%; height: 55rem; z-index: 2; }
+.slider__next { position: absolute; left: 1207rem; top: 283rem; width: 34rem; height: 34rem; padding: 0; border: 0; border-radius: 50%; background: rgba(255,255,255,0.85); cursor: pointer; z-index: 3; }
+.slider__next::after { content: ''; position: absolute; left: 10rem; top: 11rem; width: 10rem; height: 10rem; border-right: 2rem solid #333; border-top: 2rem solid #333; transform: rotate(45deg); }
+.stripe { position: absolute; left: 0; width: 100%; z-index: 2; }
+.stripe--teal { background: var(--teal); }
+.stripe--pink { background: var(--pink); }
+.slider .stripe { height: 24rem; }
+.slider .stripe--teal { top: 537rem; }
+.slider .stripe--pink { top: 566rem; }
+
+/* ---------- Flights ---------- */
+.flights { height: 603rem; }
+.flights__h { position: absolute; left: 432rem; top: 122rem; width: 769rem; height: 89rem; margin: 0; font-size: 72rem; line-height: 89rem; text-align: center; }
+.flights__sub { position: absolute; left: 564rem; top: 234rem; width: 463rem; margin: 0; font-family: var(--din); font-size: 32.4rem; line-height: 45.4rem; color: var(--teal); text-align: center; }
+.flights__img { position: absolute; left: -24rem; top: 67rem; width: 1280rem; height: auto; }
+
+/* ---------- Kids video ---------- */
+.kids { height: 647rem; }
+.torn { position: absolute; left: 0; width: 100%; height: 50rem; z-index: 2; }
+.torn--top { top: 0; }
+.torn--bottom { bottom: 0; }
+
+/* ---------- Flavors ---------- */
+.flavors { height: 639rem; }
+.flavors__h { position: absolute; left: 231rem; top: 35rem; width: 301rem; height: 83rem; margin: 0; font-size: 68rem; line-height: 83rem; text-align: left; }
+.flavors__list { position: absolute; left: 231rem; top: 135rem; width: 461rem; margin: 0; padding: 0; list-style: none; font-family: var(--text); font-size: 16.8rem; line-height: 26.9rem; color: #000; }
+.flavors__p { position: absolute; left: 231rem; width: 461rem; margin: 0; font-family: var(--text); font-size: 16.8rem; line-height: 26.9rem; color: #000; }
+.flavors__p--1 { top: 459rem; }
+.flavors__p--2 { top: 510rem; }
+.flavors__cone { position: absolute; left: 692rem; top: 43rem; width: 369rem; height: 552rem; object-fit: cover; }
+
+/* ---------- Logo strip + stripes ---------- */
+.logostrip { height: 181rem; background: #000; }
+.stripes { height: 68rem; background: #fff; }
+.stripes .stripe { height: 24rem; }
+.stripes .stripe--teal { top: 8rem; }
+.stripes .stripe--pink { top: 37rem; }
+
+/* ---------- Coffee ---------- */
+.coffee { height: 209rem; background: var(--brown); }
+.coffee__word { position: absolute; left: 30rem; top: 27rem; margin: 0; font-family: var(--dinn); font-size: 131.9rem; line-height: 158.3rem; color: #fff; white-space: nowrap; z-index: 2; }
+.coffee__marq { position: absolute; left: 0; top: 45rem; width: 100%; height: 158rem; overflow: hidden; }
+.coffee__marq span { position: absolute; left: 100%; top: 0; margin: 0; font-family: var(--dinn); font-size: 131.6rem; line-height: 158rem; color: var(--pink); white-space: nowrap; animation: marq 14s linear infinite; }
+@keyframes marq { from { transform: translateX(0); } to { transform: translateX(calc(-100% - 100vw)); } }
+
+/* ---------- Workspace ---------- */
+.work { height: 677rem; }
+.work__box { position: absolute; left: 598rem; top: 102rem; width: 646rem; height: 223rem; border: 9rem solid var(--teal); border-radius: 20.4rem; background: rgba(249,242,227,0.3); }
+.work__l1 { position: absolute; right: 117rem; top: 46rem; margin: 0; font-family: var(--din); font-size: 51.8rem; line-height: 62.1rem; color: #fff; white-space: nowrap; text-align: right; }
+.work__l1 s { color: #6E6E6E; }
+.work__l2 { position: absolute; right: 35rem; top: 107rem; margin: 0; font-family: 'Sarina', cursive; font-size: 43.7rem; line-height: 56.8rem; color: var(--pink); white-space: nowrap; text-shadow: 0 2rem 4rem rgba(0,0,0,0.18); }
+
+/* ---------- Gift cards ---------- */
+.gift { height: 500rem; background: linear-gradient(90deg, #93BEC6 0%, #DA7D7B 100%); }
+.gift__bg { opacity: 0.45; mix-blend-mode: luminosity; }
+.gift__h { position: absolute; left: 80rem; top: 92rem; width: 445rem; margin: 0; font-family: var(--dinn); font-size: 65.8rem; line-height: 78.9rem; color: #fff; text-transform: uppercase; text-shadow: 0 2rem 6rem rgba(0,0,0,0.15); }
+.gift__sub { position: absolute; left: 80rem; top: 332rem; margin: 0; font-family: var(--dinn); font-size: 55rem; line-height: 66rem; color: #fff; white-space: nowrap; text-shadow: 0 2rem 6rem rgba(0,0,0,0.15); }
+.gift__card { position: absolute; left: 598rem; top: -110rem; width: 540rem; height: 540rem; object-fit: contain; filter: drop-shadow(0 8rem 16rem rgba(0,0,0,0.2)); }
+.gift__btn { position: absolute; left: 743rem; top: 382rem; width: 252rem; height: 55rem; border: 3rem solid #fff; border-radius: 30.4rem; background: #fff; color: var(--teal); font-family: var(--display); font-weight: 700; font-size: 20.3rem; line-height: 49rem; text-align: center; text-decoration: none; letter-spacing: 0.5rem; }
+
+/* ---------- Reviews ---------- */
+.reviews { height: 944rem; }
+.reviews__h { position: absolute; left: 305rem; top: 122rem; width: 671rem; height: 85rem; margin: 0; font-size: 66rem; line-height: 85rem; text-align: center; }
+.reviews__wave { position: absolute; left: 0; top: 262rem; width: 100%; height: 130rem; }
+.reviews__cones { position: absolute; left: 388rem; top: 218rem; display: flex; gap: -8rem; }
+.reviews__cones img { width: 109rem; height: 163rem; object-fit: cover; margin-right: -8rem; }
+.reviews__card { position: absolute; left: 303rem; top: 402rem; width: 673rem; height: 487rem; border: 1rem solid var(--teal); border-radius: 20rem; background: linear-gradient(90deg, rgba(147,190,198,0.11) 0%, rgba(147,190,198,0.024) 100%); overflow: hidden; }
+.reviews__slide { position: absolute; inset: 0; opacity: 0; transition: opacity .6s ease; }
+.reviews__slide.is-on { opacity: 1; }
+.reviews__slide p { position: absolute; left: 27rem; top: 33rem; width: 607rem; margin: 0; font-family: 'Corben', serif; font-size: 25rem; line-height: 35rem; color: var(--ink); }
+.reviews__slide cite { position: absolute; right: 28rem; top: 281rem; font-family: 'Belinda', cursive; font-style: normal; font-size: 30rem; line-height: 42rem; color: #000; }
+.reviews__nav { position: absolute; left: 0; width: 100%; top: 889rem; height: 24rem; text-align: center; }
+.reviews__nav button { position: absolute; top: 0; width: 24rem; height: 24rem; padding: 0; border: 1rem solid #333; border-radius: 50%; background: rgba(255,255,255,0.7); cursor: pointer; }
+.reviews__nav button::after { content: ''; position: absolute; top: 7rem; width: 7rem; height: 7rem; border-top: 1.5rem solid #333; border-right: 1.5rem solid #333; }
+.reviews__prev { left: 576rem; } .reviews__prev::after { left: 9rem; transform: rotate(-135deg); }
+.reviews__next { left: 678rem; } .reviews__next::after { left: 6rem; transform: rotate(45deg); }
+.stripes2 { height: 50rem; }
+.stripes2 .stripe { height: 25rem; }
+.stripes2 .stripe--pink { top: 0; }
+.stripes2 .stripe--teal { top: 25rem; }
+
+/* ---------- Friends + footer ---------- */
+.friends { height: 610rem; }
+.friends__curve { position: absolute; left: 0; bottom: -1rem; width: 100%; height: 113rem; z-index: 2; }
+.ftr { position: relative; height: 523rem; background: var(--teal); color: #fff; }
+.ftr__logo { position: absolute; left: 64rem; top: 0; width: 276rem; height: 294rem; object-fit: contain; }
+.ftr__links { position: absolute; left: 350rem; top: 87rem; margin: 0; padding: 0; list-style: none; font-family: var(--dinn); font-size: 18.2rem; line-height: 23.7rem; }
+.ftr__links li { margin-bottom: 13rem; }
+.ftr__contact { position: absolute; left: 655rem; top: 82rem; font-family: var(--text); font-weight: 700; font-size: 16rem; line-height: 25.6rem; text-decoration: none; }
+.ftr__social { position: absolute; left: 168rem; top: 306rem; display: flex; gap: 14rem; }
+.ftr__social a { display: block; width: 22rem; height: 22rem; }
+.ftr__social svg { width: 100%; height: 100%; fill: #fff; }
+.ftr__rule { position: absolute; left: 40rem; top: 338rem; width: 1176rem; height: 1rem; background: #fff; }
+.ftr__legal { position: absolute; top: 358rem; margin: 0; font-family: var(--dinn); font-size: 18.2rem; line-height: 23.7rem; text-decoration: none; }
+.ftr__addr { position: absolute; left: 0; width: 100%; top: 405rem; margin: 0; font-family: var(--dinn); font-size: 14.2rem; line-height: 18.4rem; text-align: center; }
+.ftr__copy { position: absolute; left: 0; width: 100%; top: 443rem; margin: 0; font-family: var(--text); font-size: 15rem; line-height: 20rem; text-align: center; }
+
+/* ---------- Legal pages ---------- */
+.legal { padding: 60rem 0 90rem; max-width: 980rem; margin: 0 auto; font-family: var(--text); font-size: 16rem; line-height: 1.7; color: #000; }
+.legal h1 { font-family: var(--dinn); font-size: 48rem; margin: 0 0 8rem; color: #000; font-weight: 400; }
+.legal .eff { color: #555; margin: 0 0 32rem; }
+.legal h2 { font-family: var(--text); font-weight: 700; font-size: 18rem; margin: 28rem 0 6rem; }
+.legal p, .legal li { margin: 0 0 10rem; }
+
+/* =====================================================================
+   Phone layout — measured from the Wix mobile layout at 375px wide.
+   ===================================================================== */
+@media (max-width: 750px) {
+  html { font-size: calc(100vw / 375); }
+
+  /* Wix orders the phone layout differently from desktop */
+  main { display: flex; flex-direction: column; }
+  .hero { order: 1; } .scoops { order: 2; } .slider { order: 3; } .logostrip { order: 4; }
+  .flights { order: 5; } .flavors { order: 6; } .coffee { order: 7; } .stripes { order: 8; }
+  .work { order: 9; } .gift { order: 10; } .kids { order: 11; } .reviews { order: 12; }
+  .stripes2 { order: 13; } .friends { order: 14; }
+  .hdr { height: 77rem; }
+  .hdr__logo { left: 110rem; top: 13rem; width: 156rem; height: 28rem; }
+  .hdr__tag { left: 109rem; top: 45rem; width: 157rem; font-size: 12rem; line-height: 16rem; }
+  .hdr__locs { display: none; }
+  .hdr__menu { left: 286rem; top: 15rem; width: 77rem; height: 30rem; border-radius: 20rem; font-size: 16rem; line-height: 30rem; }
+  .spacer { height: 77rem; }
+
+  .hero { height: 794rem; }
+  .hero__wave { height: 40rem; }
+  .hero__special { left: 10rem; top: 70rem; bottom: auto; width: 235rem; height: 127rem; border-width: 2rem; border-radius: 5rem; }
+  .hero__m { display: block; }
+  .hero__locs { position: absolute; left: 9rem; top: 489rem; width: 224rem; margin: 0; padding: 0; list-style: none; z-index: 2; }
+  .hero__locs li { position: relative; height: 39rem; margin-bottom: 5rem; font-family: var(--din); font-size: 14rem; line-height: 17rem; color: #fff; }
+  .hero__locs img { position: absolute; left: 0; top: 11rem; width: 16rem; height: 16rem; }
+  .hero__locs .name { position: absolute; left: 24rem; top: 3rem; width: 100rem; }
+  .hero__locs .tel { position: absolute; right: 0; top: 12rem; color: #fff; text-decoration: none; }
+  .hero__pizza { position: absolute; left: 14rem; top: 666rem; width: 155rem; margin: 0; font-family: var(--dinn); font-size: 16rem; line-height: 21rem; color: #fff; text-align: right; z-index: 2; }
+  .hero__cinders { position: absolute; left: 180rem; top: 625rem; width: 135rem; height: 135rem; object-fit: contain; z-index: 2; }
+
+  .scoops { height: 200rem; }
+  .scoops__h { left: -16rem; top: 48rem; width: 407rem; height: 40rem; font-size: 27rem; line-height: 40rem; }
+  .slider { height: 283rem; }
+  .slider__wave { height: 25rem; }
+  .slider__next { left: 330rem; top: 125rem; width: 28rem; height: 28rem; }
+  .slider__next::after { left: 8rem; top: 9rem; width: 8rem; height: 8rem; }
+  .slider .stripe { height: 7rem; }
+  .slider .stripe--teal { top: 260rem; }
+  .slider .stripe--pink { top: 269rem; }
+
+  .flights { height: 177rem; }
+  .flights__h { left: 120rem; top: 32rem; width: 227rem; height: 46rem; font-size: 24rem; line-height: 46rem; }
+  .flights__sub { left: 120rem; top: 70rem; width: 227rem; font-size: 10rem; line-height: 14rem; }
+  .flights__img { left: -7rem; top: 42rem; width: 375rem; height: auto; }
+
+  .kids { height: 189rem; }
+  .torn { height: 16rem; }
+
+  .flavors { height: 464rem; }
+  .flavors__h { left: 31rem; top: 10rem; width: 303rem; height: 50rem; font-size: 40rem; line-height: 50rem; }
+  .flavors__list { left: 35rem; top: 76rem; width: 299rem; font-size: 14rem; line-height: 22.4rem; }
+  .flavors__p { left: 35rem; width: 299rem; font-size: 14rem; line-height: 22.4rem; }
+  .flavors__p--1 { top: 345rem; }
+  .flavors__p--2 { top: 411rem; }
+  .flavors__cone { display: none; }
+
+  .logostrip { height: 53rem; }
+  .stripes { height: 20rem; }
+  .stripes .stripe { height: 7rem; }
+  .stripes .stripe--teal { top: 2rem; }
+  .stripes .stripe--pink { top: 11rem; }
+
+  .coffee { height: 61rem; }
+  .coffee__word { left: 12rem; top: 7rem; font-size: 39rem; line-height: 46rem; }
+  .coffee__marq { top: 7rem; height: 46rem; }
+  .coffee__marq span { font-size: 39rem; line-height: 46rem; }
+
+  .work { height: 457rem; }
+  .work__box { left: 102rem; top: 18rem; width: 258rem; height: 89rem; border-width: 3rem; border-radius: 6rem; }
+  .work__l1 { right: 9rem; top: 16rem; font-size: 25rem; line-height: 26rem; }
+  .work__l2 { right: 9rem; top: 44rem; font-size: 20rem; line-height: 27rem; }
+
+  .gift { height: 218rem; }
+  .gift__h { left: 21rem; top: 47rem; width: 182rem; font-size: 27rem; line-height: 32rem; }
+  .gift__sub { left: 21rem; top: 134rem; font-size: 24rem; line-height: 28rem; }
+  .gift__card { left: 205rem; top: 25rem; width: 158rem; height: 158rem; }
+  .gift__btn { display: none; }
+
+  .reviews { height: 686rem; }
+  .reviews__h { left: 40rem; top: 128rem; width: 295rem; height: 36rem; font-size: 26rem; line-height: 36rem; }
+  .reviews__wave { top: 50rem; height: 70rem; }
+  .reviews__cones { left: 22rem; top: 162rem; }
+  .reviews__cones img { width: 66rem; height: 99rem; margin-right: 3rem; }
+  .reviews__card { left: 80rem; top: 270rem; width: 223rem; height: 286rem; border-radius: 6rem; }
+  .reviews__slide p { left: 12rem; top: 7rem; width: 189rem; font-family: Arial, sans-serif; font-weight: 700; font-size: 13rem; line-height: 17rem; }
+  .reviews__slide cite { right: 12rem; top: 226rem; font-family: Arial, sans-serif; font-weight: 700; font-size: 14rem; line-height: 16rem; }
+  .reviews__nav { top: 600rem; }
+  .reviews__prev { left: 163rem; } .reviews__next { left: 188rem; }
+  .stripes2 { height: 12rem; }
+  .stripes2 .stripe { height: 5rem; }
+  .stripes2 .stripe--teal { top: 6rem; }
+
+  .friends { height: 200rem; }
+  .friends__curve { height: 36rem; }
+  .ftr { height: 445rem; }
+  .ftr__logo { left: 18rem; top: 9rem; width: 81rem; height: 86rem; }
+  .ftr__links { left: 102rem; top: 26rem; width: 70rem; font-size: 16rem; line-height: 20rem; }
+  .ftr__links li { margin-bottom: 9rem; }
+  .ftr__contact { left: 192rem; top: 24rem; font-size: 16rem; }
+  .ftr__social { left: 250rem; top: 210rem; gap: 18rem; }
+  .ftr__social a { width: 52rem; height: 52rem; }
+  .ftr__rule { left: 22rem; top: 285rem; width: 331rem; }
+  .ftr__legal { top: 228rem; font-size: 10rem; line-height: 12rem; width: 50rem; }
+  .ftr__addr { top: 275rem; font-size: 10rem; line-height: 12rem; }
+  .ftr__copy { top: 380rem; font-size: 13rem; line-height: 17rem; }
+  .legal { padding: 24rem 16rem 48rem; font-size: 14rem; }
+  .legal h1 { font-size: 30rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .coffee__marq span { animation: none; left: 400rem; }
+  .slider__track { transition: none; }
+}
