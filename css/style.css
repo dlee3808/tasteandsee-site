@@ -46,11 +46,12 @@ a { color: inherit; }
 .hdr__logo img { width: 100%; height: 100%; object-fit: contain; }
 .hdr__tag { position: absolute; left: 422rem; top: 37rem; width: 263rem; margin: 0; font-family: var(--script); font-size: 25.3rem; line-height: 32.9rem; color: var(--pink); text-align: center; }
 .hdr__locs { position: absolute; left: 779rem; top: 21rem; width: 310rem; margin: 0; padding: 0; list-style: none; }
-.hdr__locs li { position: relative; height: 20rem; margin-bottom: 5rem; font-family: var(--din); font-size: 14.2rem; line-height: 19.9rem; color: var(--pink); }
+.hdr__locs li { position: relative; height: 34rem; margin-bottom: 4rem; font-family: var(--din); font-size: 14.2rem; line-height: 19.9rem; color: var(--pink); }
 .hdr__locs img { position: absolute; left: 0; top: 2rem; width: 18rem; height: 18rem; }
 .hdr__locs .name { position: absolute; left: 24rem; top: 3rem; white-space: nowrap; }
 .hdr__locs .tel { position: absolute; right: 0; top: 3rem; text-decoration: none; }
 .hdr__locs .tel--u { text-decoration: underline; }
+.hdr__locs .hrs { position: absolute; left: 24rem; top: 19rem; font-size: 11.5rem; line-height: 14rem; white-space: nowrap; }
 .hdr__menu { position: absolute; left: 1113rem; top: 21rem; width: 144rem; height: 42rem; border-radius: 20.2rem; background: var(--teal); color: #fff; font-family: var(--text); font-size: 14.2rem; line-height: 42rem; text-align: center; text-decoration: none; }
 .spacer { height: 135rem; }
 
@@ -199,10 +200,12 @@ a { color: inherit; }
   .hero__special { left: 10rem; top: 70rem; bottom: auto; width: 235rem; height: 127rem; border-width: 2rem; border-radius: 5rem; }
   .hero__m { display: block; }
   .hero__locs { position: absolute; left: 9rem; top: 489rem; width: 224rem; margin: 0; padding: 0; list-style: none; z-index: 2; }
-  .hero__locs li { position: relative; height: 39rem; margin-bottom: 5rem; font-family: var(--din); font-size: 14rem; line-height: 17rem; color: #fff; }
+  .hero__locs li { position: relative; height: 50rem; margin-bottom: 4rem; font-family: var(--din); font-size: 14rem; line-height: 17rem; color: #fff; }
   .hero__locs img { position: absolute; left: 0; top: 11rem; width: 16rem; height: 16rem; }
   .hero__locs .name { position: absolute; left: 24rem; top: 3rem; width: 100rem; }
   .hero__locs .tel { position: absolute; right: 0; top: 12rem; color: #fff; text-decoration: none; }
+  .hero__locs .hrs { position: absolute; right: 0; top: 32rem; font-size: 11rem; line-height: 14rem; white-space: nowrap; }
+  .hero__locs { top: 470rem; }
   .hero__pizza { position: absolute; left: 14rem; top: 666rem; width: 155rem; margin: 0; font-family: var(--dinn); font-size: 16rem; line-height: 21rem; color: #fff; text-align: right; z-index: 2; }
   .hero__cinders { position: absolute; left: 180rem; top: 625rem; width: 135rem; height: 135rem; object-fit: contain; z-index: 2; }
 
